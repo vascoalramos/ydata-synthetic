@@ -11,16 +11,16 @@ endif
 
 lint: ### Validates project with linting rules
 	python -m pip install pylint
-	python -m pylint src/y
+	python -m pylint src/
 
 test: ### Runs all the project tests
 	python -m pip install -r requirements-test.txt
-	python -m pytest src/
+	python -m pytest
 
 test_cov:
 	echo $(PYTHONPATH)
 	python -m pip install -r requirements-test.txt
-	python -m pytest --cov=. src/
+	python -m pytest --cov=.
 
 package: clean ### Runs the project setup
 	echo "$(version)" > VERSION
