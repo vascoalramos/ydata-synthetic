@@ -15,12 +15,12 @@ lint: ### Validates project with linting rules
 
 test: ### Runs all the project tests
 	python -m pip install -r requirements-test.txt
-	python -m pytest
+	python -m pytest src/ydata_synthetic/tests
 
 test_cov:
 	echo $(PYTHONPATH)
 	python -m pip install -r requirements-test.txt
-	python -m pytest --cov=.
+	python -m pytest --cov=. src/ydata_synthetic/tests
 
 package: clean ### Runs the project setup
 	echo "$(version)" > VERSION
@@ -32,5 +32,8 @@ clean: ### Removes build binaries
 install: ### Installs required dependencies
 	python -m pip install dist/ydata-synthetic-$(version).tar.gz
 
+install_test:
+	echo "$(version)" > VERSION
+	python -m pip install -e .
 
 
