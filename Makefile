@@ -18,7 +18,6 @@ test: ### Runs all the project tests
 	python -m pytest src/ydata_synthetic/tests
 
 test_cov:
-	echo $(PYTHONPATH)
 	python -m pip install -r requirements-test.txt
 	python -m pytest --cov=. src/ydata_synthetic/tests
 
