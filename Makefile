@@ -15,11 +15,11 @@ lint: ### Validates project with linting rules
 
 test: ### Runs all the project tests
 	python -m pip install -r requirements-test.txt
-	python -m pytest src/ydata_synthetic
+	python -m pytest src/ydata_synthetic/
 
 test_cov:
 	python -m pip install -r requirements-test.txt
-	python -m pytest --cov=. src/ydatautils/
+	python -m pytest --cov=. src/ydata_synthetic/
 
 package: clean ### Runs the project setup
 	echo "$(version)" > VERSION
