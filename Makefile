@@ -18,6 +18,7 @@ test: ### Runs all the project tests
 	python -m pytest src/
 
 test_cov:
+	echo $PYTHONPATH
 	python -m pip install -r requirements-test.txt
 	python -m pytest --cov=. src/
 
